@@ -1,0 +1,41 @@
+.home-container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 50px;
+
+    min-height: 80vh;
+}
+
+.home-left {
+
+    width: 50%;
+}
+
+.home-left h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1976d2;
+}
+
+.home-left p {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.home-right {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.home-right img {
+    width: 350px;
+    height: 350px;
+}
