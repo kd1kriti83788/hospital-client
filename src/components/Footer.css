@@ -1,35 +1,25 @@
 .footer {
-
     background-color: #1976d2;
-
     color: white;
-
     padding: 30px;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: start;
-
     margin-top: 40px;
 }
 
 .footer-left,
 .footer-center,
 .footer-right {
-
     width: 30%;
 }
 
 .footer h3,
 .footer h4 {
-
     margin-bottom: 15px;
 }
 
 .footer p {
-
     margin-bottom: 10px;
     cursor: pointer;
 }

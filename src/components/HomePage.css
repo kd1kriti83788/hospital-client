@@ -1,18 +1,12 @@
 .home-container {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 50px;
-
-    min-height: 80vh;
+    min-height: 60vh;
 }
 
 .home-left {
-
     width: 50%;
 }
 

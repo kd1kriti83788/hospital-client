@@ -13,10 +13,8 @@ function App() {
   return (
     <>
       <Navbar setPage={setPage} />
-
       {page === "Home" && (<Homepage/>)}
       {page !== "Home" && (<div>This is {page} page </div>)}
-
       <Footer/>
     </>
   )
