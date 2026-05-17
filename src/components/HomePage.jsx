@@ -3,10 +3,10 @@ import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
 
-function HomePage() {
+function HomePage(props) {
 
     const [showRegister, setShowRegister] = useState(false);
-
+    const page = props.page;
     return (
         <>
         <div>
@@ -22,7 +22,6 @@ function HomePage() {
             </p>
         </div>
         <div className="home-container">
-
             {/* RIGHT SECTION */}
             <div className="home-right">
 
@@ -32,34 +31,14 @@ function HomePage() {
                 />
 
             </div>
-
-            {/* RIGHT SECTION */}
-            <div className="home-right">
-
-                
-            </div>
-
-            
-
             {/* LEFT SECTION */}
             <div className="home-left">
-
                 {
                     showRegister ?
-
-                    <Register
-                        openLogin={() => setShowRegister(false)}
-                    />
-
-                    :
-
-                    <Login
-                        openRegister={() => setShowRegister(true)}
-                    />
+                    <Register openLogin={() => setShowRegister(false)}/>:
+                    <Login page={page} openRegister={() => setShowRegister(true)}/>
                 }
-
             </div>
-
         </div>
         </>
     );

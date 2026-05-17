@@ -1,24 +1,38 @@
 import "./Login.css";
+import {login} from "../services/authenticationService";
+import {DOCTOR_TYPE, PATIENT_TYPE} from "../constants";
+import { useRef } from "react";
 
-function Login({ openRegister }) {
+function Login({ openRegister, page }) {
+    const emailRef=useRef("");
+    const passwordRef=useRef("");
 
+    const isDoctorsPage = page === "DoctorsLogin";
+    console.log("page"+ page);
+
+    const loginCall = () =>{
+        const type = isDoctorsPage ? DOCTOR_TYPE: PATIENT_TYPE;
+        login(type,emailRef.current,passwordRef.current);
+    }
     return (
-
         <div className="login-box">
 
-            <h2>Patient Login</h2>
-
+            <h2>{ isDoctorsPage ? (<>Doctor's</>) : (<>Patient's</>)} Login</h2>
             <input
-                type="email"
+                type="email" onChange={(e)=>{
+                    emailRef.current=e.target.value;
+                }}
                 placeholder="Enter Email"
             />
 
             <input
-                type="password"
+                type="password" onChange={(e)=>{
+                    passwordRef.current=e.target.value;
+                }}
                 placeholder="Enter Password"
             />
 
-            <button className="login-btn">
+            <button className="login-btn" onClick={loginCall} >
                 Login
             </button>
 

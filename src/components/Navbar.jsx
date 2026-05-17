@@ -11,6 +11,7 @@ function Navbar(props) {
                 <button onClick={()=> { props.setPage('Doctors')}}>Doctors</button>
                 <button onClick={()=> { props.setPage('Appointments')}}>Appointments</button>
                 <button onClick={()=> { props.setPage('Contact')}}>Contact</button>
+                <button onClick={()=> { props.setPage('DoctorsLogin') }}>Doctor's Login</button>
             </div>
         </div>
     );

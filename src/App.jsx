@@ -13,8 +13,9 @@ function App() {
   return (
     <>
       <Navbar setPage={setPage} />
-      {page === "Home" && (<Homepage/>)}
-      {page !== "Home" && (<div>This is {page} page </div>)}
+      {page === "Home" && (<Homepage page={page}/>)}
+      {page === "DoctorsLogin" && (<Homepage  page={page}/>)}
+      {(page !== "Home" && page !=="DoctorsLogin") && (<div>This is {page} page </div>)}
       <Footer/>
     </>
   )
