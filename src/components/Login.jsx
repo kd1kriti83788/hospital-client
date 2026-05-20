@@ -3,24 +3,25 @@ import {login} from "../services/authenticationService";
 import {DOCTOR_TYPE, PATIENT_TYPE} from "../constants";
 import { useRef } from "react";
 
-function Login({ openRegister, page }) {
+function Login({ openRegister, page ,setPage }) {
     const emailRef=useRef("");
     const passwordRef=useRef("");
 
-    const isDoctorsPage = page === "DoctorsLogin";
+    const isDoctersPage = page === "DoctorsLogin";
     console.log("page"+ page);
 
     const loginCall = async () =>{
-        const type = isDoctorsPage ? DOCTOR_TYPE: PATIENT_TYPE;
+        const type = isDoctersPage ? DOCTOR_TYPE: PATIENT_TYPE;
         const status = await login(type,emailRef.current,passwordRef.current);
         if(status === "success"){
-            console.log("Login Successful");
+            console.log("Login Successful"); 
+            setPage("Docters");
         }
     }
     return (
         <div className="login-box">
 
-            <h2>{ isDoctorsPage ? (<>Doctor's</>) : (<>Patient's</>)} Login</h2>
+            <h2>{ isDoctersPage ? (<>Doctor's</>) : (<>Patient's</>)} Login</h2>
             <input
                 type="email" onChange={(e)=>{
                     emailRef.current=e.target.value;

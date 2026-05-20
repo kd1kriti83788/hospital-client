@@ -36,7 +36,7 @@ function HomePage(props) {
                 {
                     showRegister ?
                     <Register openLogin={() => setShowRegister(false)}/>:
-                    <Login page={page} openRegister={() => setShowRegister(true)}/>
+                    <Login page={page} openRegister={() => setShowRegister(true)} setPage={props.setPage}/>
                 }
             </div>
         </div>
