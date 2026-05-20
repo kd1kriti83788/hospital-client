@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   const [page, setPage] = useState("Home");
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   return (
     <>
       <Navbar setPage={setPage} />

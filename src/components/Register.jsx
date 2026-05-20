@@ -8,10 +8,12 @@ function Register({ openLogin }) {
     const mobileRef=useRef("");
     const addressRef=useRef("");
     const passwordRef=useRef("");
-   const registerCall = () =>{
-       register(nameRef.current,emailRef.current,mobileRef.current,addressRef.current,passwordRef.current);
+   const registerCall = async () =>{
+        const status = await register(nameRef.current,emailRef.current,mobileRef.current,addressRef.current,passwordRef.current);
+        if(status==="success"){
+            openLogin();
+        } 
     }
-
     return (
         <div className="register-box">
             <h2>Patient Register</h2>
@@ -22,7 +24,7 @@ function Register({ openLogin }) {
             <input type="password" onChange={(e)=>{passwordRef.current=e.target.value;}} placeholder="Enter Password" />
             <button className="register-submit-btn" onClick={registerCall}>Register</button>
             <p>Already have account?</p>
-            <button className="back-login-btn" >Back To Login</button>
+            <button className="back-login-btn" onClick={openLogin} >Back To Login</button>
         </div>
     );
 }

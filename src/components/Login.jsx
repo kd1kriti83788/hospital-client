@@ -10,9 +10,12 @@ function Login({ openRegister, page }) {
     const isDoctorsPage = page === "DoctorsLogin";
     console.log("page"+ page);
 
-    const loginCall = () =>{
+    const loginCall = async () =>{
         const type = isDoctorsPage ? DOCTOR_TYPE: PATIENT_TYPE;
-        login(type,emailRef.current,passwordRef.current);
+        const status = await login(type,emailRef.current,passwordRef.current);
+        if(status === "success"){
+            console.log("Login Successful");
+        }
     }
     return (
         <div className="login-box">
