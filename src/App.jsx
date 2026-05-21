@@ -6,7 +6,7 @@ import './App.css';
 import Navbar from'./components/Navbar';
 import Homepage from'./components/HomePage';
 import Footer from './components/Footer';
-import DoctersPage from './components/DoctersPage';
+import DoctorsPage from './components/DoctorsPage';
 
 function App() {
   const [page, setPage] = useState("Home");
@@ -15,9 +15,9 @@ function App() {
     <>
       <Navbar setPage={setPage} />
       {page === "Home" && (<Homepage page={page} setPage={setPage}/>)}
-      {page === "Docters" && (<DoctersPage page={page}/>)}
+      {page === "Doctors" && (<DoctorsPage page={page}/>)}
       {page === "DoctorsLogin" && (<Homepage  page={page}/>)}
-      {(page !== "Home" && page !=="DoctorsLogin" && page!=="Docters") && (<div>This is {page} page </div>)}
+      {(page !== "Home" && page !=="DoctorsLogin" && page!=="Doctors") && (<div>This is {page} page </div>)}
       <Footer/>
     </>
   )

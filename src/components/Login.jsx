@@ -15,7 +15,7 @@ function Login({ openRegister, page ,setPage }) {
         const status = await login(type,emailRef.current,passwordRef.current);
         if(status === "success"){
             console.log("Login Successful"); 
-            setPage("Docters");
+            setPage("Doctors");
         }
     }
     return (

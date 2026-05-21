@@ -17,8 +17,6 @@ function Navbar(props) {
             <div className="navbar-right">
                 <button onClick={()=> { props.setPage('Home')}}>Home</button>
                 <button onClick={()=> { props.setPage('Doctors')}}>Doctors</button>
-                <button onClick={()=> { props.setPage('Appointments')}}>Appointments</button>
-                <button onClick={()=> { props.setPage('Contact')}}>Contact</button>
                 <button onClick={()=> { props.setPage('DoctorsLogin') }}>Doctor's Login</button>
                 <button onClick={handleLogout} id="logout-btn">Logout</button>
             </div>
